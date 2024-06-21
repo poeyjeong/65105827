@@ -1,0 +1,21 @@
+import 'dart:math'; //ใช้คำนวณ
+
+void main(){
+  var sideA = 7;
+  var sideB = 5;
+  var sideC = 10;
+  
+  if(sideA<=0 || sideB <= 0 || sideC<=0){ //เครื่องหมาย || แทน or
+    print('Error: All side lengths must be positive numbers.');
+  }
+
+//เช็คว่าสามารถสร้างสามเหลี่ยมได้ไหม
+  if((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)){
+    print('Error: The given sides do not form a triangle.');
+  }
+  
+  double semiPerimeter = (sideA + sideB + sideC) / 2;
+  double area = sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) *  (semiPerimeter - sideC));
+  print(area);
+
+}
