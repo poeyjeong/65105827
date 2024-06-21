@@ -1,0 +1,39 @@
+void main() {
+  List<String>students = [];
+  addStudent(students, "Chanankorn");
+  addStudent(students, "Jonksuk");
+  addStudent(students, "Sirirat");
+  addStudent(students, "Birawit");
+  displayStudents(students);
+  removeStudent(students, "CJ");
+  removeStudent(students, "Jonksuk");
+  displayStudents(students);
+}
+
+void addStudent(List<String> students, String name){
+  students.add(name); //เพิ่มชื่อ
+  print("Student '$name' added.");
+  return;
+}
+
+void removeStudent(List<String> students, String name){
+  if (students.contains(name)){ //containsไว้เช็คว่าภายในมีไหม
+    students.remove(name); //removeชื่อออก
+    print("Student '$name' removed.");
+  }
+  else{
+    print("Student '$name' not found.");}
+  return;
+}
+
+void displayStudents(List<String> students){
+  if (students.isEmpty){
+    print("No students in the list.");}
+  else{
+    print("Student names:");
+    for (var name in students){
+      print(name);
+   }
+  }
+return;
+}
